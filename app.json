@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "StoryVerse",
+    "slug": "storyverse",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "scheme": "storyverse",
+    "splash": {
+      "backgroundColor": "#0f0d1a"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.storyverse.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "StoryVerse needs camera access to scan book covers and show magical AR experiences",
+        "NSMicrophoneUsageDescription": "StoryVerse needs microphone access for video recording features"
+      }
+    },
+    "android": {
+      "package": "com.storyverse.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "StoryVerse needs camera access to scan book covers and show magical AR experiences"
+        }
+      ],
+      "expo-asset",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "your-project-id"
+      },
+      "API_BASE_URL": "https://api.storyverse.app",
+      "SHOPIFY_STORE_DOMAIN": "your-store.myshopify.com",
+      "SHOPIFY_STOREFRONT_ACCESS_TOKEN": "",
+      "CDN_BASE_URL": "https://cdn.storyverse.app"
+    }
+  }
+}

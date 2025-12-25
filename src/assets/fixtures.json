@@ -1,0 +1,85 @@
+{
+  "books": [
+    {
+      "bookId": "book-001",
+      "title": "The Enchanted Forest Adventure",
+      "theme": "fantasy",
+      "targetKey": "target-enchanted-forest",
+      "videoKey": "video-enchanted-forest",
+      "physicalWidthMeters": 0.15,
+      "physicalHeightMeters": 0.225,
+      "locale": "en",
+      "description": "Journey through magical woods where friendly creatures await",
+      "author": "StoryVerse Studios",
+      "ageRange": "3-6",
+      "tags": ["nature", "animals", "adventure"]
+    },
+    {
+      "bookId": "book-002",
+      "title": "Space Explorer: Journey to the Stars",
+      "theme": "scifi",
+      "targetKey": "target-space-explorer",
+      "videoKey": "video-space-explorer",
+      "physicalWidthMeters": 0.15,
+      "physicalHeightMeters": 0.225,
+      "locale": "en",
+      "description": "Blast off on an interstellar adventure through the cosmos",
+      "author": "StoryVerse Studios",
+      "ageRange": "4-8",
+      "tags": ["space", "science", "adventure"]
+    },
+    {
+      "bookId": "book-003",
+      "title": "The Little Chef's Kitchen",
+      "theme": "cooking",
+      "targetKey": "target-little-chef",
+      "videoKey": "video-little-chef",
+      "physicalWidthMeters": 0.15,
+      "physicalHeightMeters": 0.225,
+      "locale": "en",
+      "description": "Cook up delicious treats in this fun culinary adventure",
+      "author": "StoryVerse Studios",
+      "ageRange": "3-7",
+      "tags": ["cooking", "food", "creativity"]
+    },
+    {
+      "bookId": "book-004",
+      "title": "Dinosaur Discovery",
+      "theme": "prehistoric",
+      "targetKey": "target-dinosaur",
+      "videoKey": "video-dinosaur",
+      "physicalWidthMeters": 0.15,
+      "physicalHeightMeters": 0.225,
+      "locale": "en",
+      "description": "Travel back in time to meet friendly dinosaurs",
+      "author": "StoryVerse Studios",
+      "ageRange": "3-6",
+      "tags": ["dinosaurs", "history", "adventure"]
+    },
+    {
+      "bookId": "book-005",
+      "title": "Under the Sea",
+      "theme": "ocean",
+      "targetKey": "target-ocean",
+      "videoKey": "video-ocean",
+      "physicalWidthMeters": 0.15,
+      "physicalHeightMeters": 0.225,
+      "locale": "en",
+      "description": "Dive deep into the ocean to discover marine wonders",
+      "author": "StoryVerse Studios",
+      "ageRange": "3-7",
+      "tags": ["ocean", "animals", "exploration"]
+    }
+  ],
+  "arConfig": {
+    "defaultPhysicalWidth": 0.15,
+    "defaultPhysicalHeight": 0.225,
+    "aspectRatio": 1.5,
+    "fallbackTimeoutMs": 10000,
+    "fadeInDurationMs": 500,
+    "fadeOutDurationMs": 300
+  },
+  "supportedLocales": ["en", "fr", "ar"],
+  "version": "1.0.0"
+}
+

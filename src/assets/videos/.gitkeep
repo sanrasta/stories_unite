@@ -1,0 +1,12 @@
+# AR Overlay Videos
+# 
+# Place AR overlay videos here.
+# Requirements:
+# - Format: MP4 with H.264 codec
+# - Aspect ratio: 1:1.5 (matching book cover dimensions)
+# - Muted by default (audio can be enabled by user)
+# - Recommended resolution: 720x1080 or 1080x1620
+# - File naming: {videoKey}.mp4 (e.g., video-enchanted-forest.mp4)
+#
+# See fixtures.json for the videoKey mapping to each book.
+

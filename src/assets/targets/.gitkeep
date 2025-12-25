@@ -1,0 +1,11 @@
+# AR Target Images
+# 
+# Place book cover target images here for AR image tracking.
+# Requirements:
+# - Format: PNG or JPEG
+# - Minimum resolution: 300x450 pixels (1:1.5 aspect ratio)
+# - Rich in visual features (avoid solid colors, simple patterns)
+# - File naming: {targetKey}.png (e.g., target-enchanted-forest.png)
+#
+# See fixtures.json for the targetKey mapping to each book.
+
