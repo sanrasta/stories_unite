@@ -34,6 +34,9 @@ export type { UseArFallbackTimerOptions, UseArFallbackTimerResult } from './hook
 export { useArPerformanceMode } from './hooks/useArPerformanceMode';
 export type { UseArPerformanceModeOptions, UseArPerformanceModeResult } from './hooks/useArPerformanceMode';
 
+export { useArExperience } from './hooks/useArExperience';
+export type { UseArExperienceOptions, UseArExperienceResult } from './hooks/useArExperience';
+
 // Library functions
 export {
   getArConfig,

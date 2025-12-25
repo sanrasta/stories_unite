@@ -2,20 +2,35 @@
  * Home Screen
  * 
  * Landing page with featured content and quick actions.
+ * Shows a "Continue" card if user has a recently scanned book.
  */
 
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { ScanPortalButton } from '@/shared/components/ScanPortalButton';
 import { GlassCard } from '@/shared/components/GlassCard';
+import { useLastScannedBook } from '@/shared/hooks/useLastScannedBook';
+import { getBookTargetById } from '@/features/ar/lib/arConfig';
 
 export default function HomeScreen() {
   const router = useRouter();
+  const { lastScannedBook, isLoading } = useLastScannedBook();
+
+  // Get book details for last scanned
+  const lastBook = lastScannedBook?.bookId
+    ? getBookTargetById(lastScannedBook.bookId)
+    : null;
 
   const handleScanPress = () => {
     router.push('/ar');
+  };
+
+  const handleContinuePress = () => {
+    if (lastScannedBook?.bookId) {
+      router.push(`/ar?bookId=${lastScannedBook.bookId}`);
+    }
   };
 
   return (
@@ -31,6 +46,22 @@ export default function HomeScreen() {
           <Text style={styles.title}>StoryVerse</Text>
           <Text style={styles.subtitle}>Bring your books to life with magic</Text>
         </View>
+
+        {/* Continue Reading (if last book exists) */}
+        {lastBook && !isLoading && (
+          <Pressable onPress={handleContinuePress} style={styles.continueSection}>
+            <GlassCard intensity="medium" padding="lg" style={styles.continueCard}>
+              <View style={styles.continueContent}>
+                <Text style={styles.continueLabel}>Continue</Text>
+                <Text style={styles.continueTitle}>{lastBook.title}</Text>
+                <Text style={styles.continueSubtitle}>Tap to resume experience</Text>
+              </View>
+              <View style={styles.playIcon}>
+                <Text style={styles.playEmoji}>▶️</Text>
+              </View>
+            </GlassCard>
+          </Pressable>
+        )}
 
         {/* Scan Portal */}
         <View style={styles.scanSection}>
@@ -88,7 +119,7 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
   },
   header: {
-    marginBottom: 32,
+    marginBottom: 24,
     alignItems: 'center',
   },
   greeting: {
@@ -106,6 +137,47 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#e0e0e0',
     textAlign: 'center',
+  },
+  continueSection: {
+    marginBottom: 24,
+  },
+  continueCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderColor: '#ffc834',
+    borderWidth: 1,
+  },
+  continueContent: {
+    flex: 1,
+  },
+  continueLabel: {
+    fontSize: 12,
+    color: '#ffc834',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+    marginBottom: 4,
+  },
+  continueTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#fafafa',
+    marginBottom: 4,
+  },
+  continueSubtitle: {
+    fontSize: 13,
+    color: '#9e9e9e',
+  },
+  playIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: 'rgba(255, 200, 52, 0.2)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  playEmoji: {
+    fontSize: 20,
   },
   scanSection: {
     alignItems: 'center',
@@ -141,4 +213,3 @@ const styles = StyleSheet.create({
     flex: 2,
   },
 });
-
